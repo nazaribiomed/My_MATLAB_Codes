@@ -1,4 +1,4 @@
-function [u_d,u_hatd,omega]=vme(signal,Alpha,omega_int,tau,tol)
+function [u_d,u_hatd,omega]=vme(signal,Alpha,omega_int,fs,tau,tol)
 %% Variational Mode Extraction
 % authors: Mojtaba Nazari and S.Mahmoud Sakhaei
 % mojtaba.nazari.21@gmail.com -- smsakhaei@nit.ac.ir 
@@ -63,7 +63,7 @@ N = 300;
 
 %----------- Initializing omega_d
 omega_d = zeros(N, 1);
-omega_d(1) = omega_int;
+omega_d(1) = omega_int/fs;
 
 
 %----------- dual variables vector
